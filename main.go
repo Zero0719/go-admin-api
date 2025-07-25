@@ -1,12 +1,18 @@
 package main
 
 import (
-	"fmt"
 	"go-admin-api/app/config"
+	"go-admin-api/app/utils/response"
+
+	"github.com/gin-gonic/gin"
 )
 
 func main() {
-	fmt.Println("Hello, World!")
 	config.Init()
-	fmt.Println(config.Cfg.Server.Port)
+	
+	server := gin.Default()
+	server.GET("/", func(c *gin.Context) {
+		response.Success(c, "Hello, World!")
+	})
+	server.Run(":" + config.Cfg.Server.Port)
 }
