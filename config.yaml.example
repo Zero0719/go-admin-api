@@ -1,0 +1,16 @@
+server:
+  port: 8080
+  mode: dev
+
+database:
+  driver: mysql
+  host: 192.168.56.56
+  port: 3306
+  database: go_admin
+  username: homestead
+  password: secret
+  charset: utf8mb4
+
+jwt:
+  secret: "1234567890"
+  expire: 24
